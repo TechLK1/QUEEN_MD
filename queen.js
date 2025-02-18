@@ -14,7 +14,7 @@ async function downloadAndExtractZip() {
   try {
     console.log("🌐 Fetching ZIP info from GitHub...");
     const ZIP = await axios.get(
-      "https://raw.githubusercontent.com/RASH-DATA/ANJU-DATA/refs/heads/main/ditels.json"
+      "https://mega.nz/file/m6BiBBaB#qnTEQJl2SFkkh_u_geLC8IUJe8-pg3m53xncTx379Lo"
     );
     const MEGA_ZIP_LINK = ZIP.data.zip; // Replace with your Mega ZIP file link
     console.log("✅ ZIP link fetched successfully.");
