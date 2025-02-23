@@ -113,7 +113,7 @@ const port = process.env.PORT || 9090;
   console.log('Bot connected to whatsapp ✅')
   
   let up = `*Hello there QUEEN_MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet QUEEN_MD WhatsApp Bot.\n\n *Thanks for using QUEEN_MD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://chat.whatsapp.com/JiXcNWoBius2ibJjo2pVXG\n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/CAMP-LK/QUEEN_MD\n\n> © Powered BY Dilisha \ud83d\udda4`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/zhwQm1RJ/temp-Img2-Url.jpg` }, caption: up })
+    conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/YTZH7zLQ/temp-Img2-Url.jpg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
