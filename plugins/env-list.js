@@ -47,7 +47,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: 'https://i.ibb.co/1gyyZ0M/temp-Img2-Url.jpg' }, // Image URL
+                image: { url: 'https://i.ibb.co/zhwQm1RJ/temp-Img2-Url.jpg' }, // Image URL
                 caption: envSettings,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -55,7 +55,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363399673812700@g.us',
-                        newsletterName: "JawadTechX",
+                        newsletterName: "Dilisha",
                         serverMessageId: 143
                     }
                 }
